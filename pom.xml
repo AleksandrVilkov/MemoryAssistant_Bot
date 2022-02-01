@@ -49,8 +49,6 @@
                 <version>3.6.0</version>
                 <configuration>
                     <jdkVersion>1.8</jdkVersion>
-                    <source>14</source>
-                    <target>14</target>
                 </configuration>
             </plugin>
         </plugins>
