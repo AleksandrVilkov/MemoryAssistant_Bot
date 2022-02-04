@@ -8,6 +8,7 @@ package bot;
 import TextResourses.Emodji;
 import States.*;
 import States.Setting.*;
+import org.apache.log4j.Logger;
 import settings.Settings;
 
 import java.util.*;
@@ -17,6 +18,8 @@ public class Bot {
     private State state;
     private final List<String> messageList;
     private final Settings settings;
+
+    private static final Logger logger = Logger.getLogger(Bot.class);
 
     public State getState() {
         return state;

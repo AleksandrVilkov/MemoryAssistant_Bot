@@ -1,0 +1,20 @@
+2022-02-04 14:17:01 INFO  Main:13 - Start my app
+2022-02-04 14:17:01 INFO  Main:16 - Trying to register a bot
+2022-02-04 14:17:02 INFO  Main:19 - Bot successfully created!
+2022-02-04 14:17:05 INFO  UserInteraction:42 - New user 436641871 added
+2022-02-04 14:17:31 INFO  Main:13 - Start my app
+2022-02-04 14:17:31 INFO  Main:16 - Trying to register a bot
+2022-02-04 14:17:32 INFO  Main:19 - Bot successfully created!
+2022-02-04 14:17:35 INFO  UserInteraction:42 - New user 436641871 added
+2022-02-04 14:17:48 ERROR SetMorning:56 - Error value by 436641871
+2022-02-04 14:19:23 INFO  Start:57 - Runnable STOP by user 436641871
+2022-02-04 14:19:23 INFO  Start:30 - Crate Runnable by user 436641871
+2022-02-04 14:20:15 INFO  Start:57 - Runnable STOP by user 436641871
+2022-02-04 14:20:15 INFO  Start:30 - Crate Runnable by user 436641871
+2022-02-04 14:22:43 INFO  Main:13 - Start my app
+2022-02-04 14:22:43 INFO  Main:16 - Trying to register a bot
+2022-02-04 14:22:44 INFO  Main:19 - Bot successfully created!
+2022-02-04 14:22:50 INFO  UserInteraction:42 - New user 436641871 added
+2022-02-04 14:29:43 INFO  Main:13 - Start my app
+2022-02-04 14:29:43 INFO  Main:16 - Trying to register a bot
+2022-02-04 14:29:44 INFO  Main:19 - Bot successfully created!

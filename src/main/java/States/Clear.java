@@ -9,9 +9,10 @@ import TextResourses.Emodji;
 import TextResourses.SystemMessages;
 import bot.Bot;
 import bot.UserInteraction;
+import org.apache.log4j.Logger;
 
 public class Clear extends State {
-
+private static final Logger logger = Logger.getLogger(Clear.class);
     public Clear(Bot bot) {
         super(bot);
         System.out.println("Выбран режим очистки");
@@ -33,13 +34,16 @@ public class Clear extends State {
                 } else {
                     bot.getMessageList().clear();
                     UserInteraction.sendMessage(SystemMessages.CANCEL_MESSAGE, bot.getId());
+                    logger.error("User " + bot.getId() + "clear all notes!");
                 }
                 this.bot.setState(new Wait(this.bot));
                 return;
             }
             case NO -> UserInteraction.sendMessage(SystemMessages.NOT_CANCEL_MESSAGE, bot.getId());
 
-            default -> UserInteraction.sendMessage(SystemMessages.ERROR_MESSAGE, bot.getId());
+            default -> {UserInteraction.sendMessage(SystemMessages.ERROR_MESSAGE, bot.getId());
+            logger.error("Error cleaning notes by user " + bot.getId());
+            }
         }
         this.bot.setState(new Wait(this.bot));
 

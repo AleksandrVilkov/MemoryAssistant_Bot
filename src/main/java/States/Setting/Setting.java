@@ -12,9 +12,10 @@ import States.State;
 import States.Wait;
 import bot.Bot;
 import bot.UserInteraction;
+import org.apache.log4j.Logger;
 
 public class Setting extends State {
-
+    private static final Logger logger = Logger.getLogger(Setting.class);
     public static final String SET_TIMER_COMMAND = "/set_timer";
     public static final String SET_TIME_ZONE_COMMAND = "/set_time_zone";
     public static final String SET_MORNING_HOUR = "/set_morning_hour";
@@ -45,6 +46,7 @@ public class Setting extends State {
             case EXIT -> super.getBot().setState(new Wait(super.getBot()));
             default -> {
                 UserInteraction.sendMessage(SystemMessages.ERROR_MESSAGE, super.getBot().getId());
+                logger.error("Error value by " + getBot().getId());
                 stateSetting = new Wait(super.getBot());
                 super.getBot().setState(stateSetting);
             }

@@ -12,9 +12,10 @@ import States.State;
 import States.Wait;
 import bot.Bot;
 import bot.UserInteraction;
+import org.apache.log4j.Logger;
 
 public class SetTimer extends State {
-
+    private static final Logger logger = Logger.getLogger(SetTimer.class);
     private final String INSTALL_FIVE_MIN = "/install_five_min";
     private final String INSTALL_TEN_MIN = "/install_ten_min";
     private final String INSTALL_FIFTEEN_MIN = "/install_fifteen_min";
@@ -50,7 +51,7 @@ public class SetTimer extends State {
             case INSTALL_FIVE_MIN -> newTimer = 5;
             case INSTALL_TEN_MIN -> newTimer = 10;
             case INSTALL_FIFTEEN_MIN -> newTimer = 15;
-            case INSTALL_TWENTY_MIN-> newTimer = 20;
+            case INSTALL_TWENTY_MIN -> newTimer = 20;
             case INSTALL_HALF_HOUR_TIMER -> newTimer = 30;
             case INSTALL_ONE_HOUR_TIMER -> newTimer = 60;
             case INSTALL_ONE_AND_HALF_HOUR_TIMER -> newTimer = 90;
@@ -59,6 +60,7 @@ public class SetTimer extends State {
             case INSTALL_FOUR_HOUR_TIMER -> newTimer = 240;
             default -> {
                 UserInteraction.sendMessage(SystemMessages.ERROR_MESSAGE, super.getBot().getId());
+                logger.error("Error value by " + getBot().getId());
                 super.getBot().setState(new Wait(super.getBot()));
                 return;
             }

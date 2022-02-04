@@ -12,11 +12,12 @@ import States.State;
 import States.Wait;
 import bot.Bot;
 import bot.UserInteraction;
+import org.apache.log4j.Logger;
 
 import java.util.Date;
 
 public class SetTimezone extends State {
-
+    private static final Logger logger = Logger.getLogger(SetTimezone.class);
     private final String KALT = "/KALT"; //калинингроад -1
     private final String MSK = "/MSK";   //Москва 0
     private final String SAMT = "/SAMT"; //Самара +1
@@ -67,6 +68,7 @@ public class SetTimezone extends State {
             case PETT -> newTimeZone = 9;
             default -> {
                 UserInteraction.sendMessage(SystemMessages.ERROR_MESSAGE, super.getBot().getId());
+                logger.error("Error value by " + getBot().getId());
                 super.getBot().setState(new Wait(super.getBot()));
                 return;
             }

@@ -12,8 +12,10 @@ import States.State;
 import States.Wait;
 import bot.Bot;
 import bot.UserInteraction;
+import org.apache.log4j.Logger;
 
 public class SetNight extends State {
+    private static final Logger logger = Logger.getLogger(SetNight.class);
     private final String FOURTEEN = "/fourteen";
     private final String FIFTEEN = "/fifteen";
     private final String SIXTEEN = "/sixteen";
@@ -59,6 +61,7 @@ public class SetNight extends State {
             default -> {
                 UserInteraction.sendMessage(Emodji.EXCLAMATION_POINT +
                         "Ты ввел не верное значение!", super.getBot().getId());
+                logger.error("Error value by " + getBot().getId());
                 super.getBot().setState(new SetNight(super.getBot()));
                 return;
             }

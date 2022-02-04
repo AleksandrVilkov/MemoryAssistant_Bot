@@ -1,12 +1,13 @@
 package Parsers;
 
 import bot.BotAuthorization;
+import org.apache.log4j.Logger;
 import org.json.simple.parser.JSONParser;
 
 import java.io.FileReader;
 
 public class JsonSimpleParser implements Parser {
-
+private static final Logger logger = Logger.getLogger(JsonSimpleParser.class);
     @Override
     public BotAuthorization parse() {
         BotAuthorization botAuthorizationObject = new BotAuthorization();
@@ -22,6 +23,7 @@ public class JsonSimpleParser implements Parser {
             return botAuthorizationObject;
         } catch (Exception e) {
             e.printStackTrace();
+            logger.error("Error create " + BotAuthorization.class);
         }
         return null;
     }

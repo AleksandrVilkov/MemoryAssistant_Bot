@@ -8,6 +8,7 @@ package bot;
 import Parsers.JsonSimpleParser;
 import TextResourses.Emodji;
 import TextResourses.SystemMessages;
+import org.apache.log4j.Logger;
 import org.telegram.telegrambots.bots.TelegramLongPollingBot;
 import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
 import org.telegram.telegrambots.meta.api.objects.Update;
@@ -20,10 +21,12 @@ public class UserInteraction extends TelegramLongPollingBot {
     private static String TOKEN;
     private static String USERNAME;
     private final HashMap<String, Bot> bot = new HashMap<>();
+    private static final Logger logger = Logger.getLogger(UserInteraction.class);
 
     public UserInteraction() {
         JsonSimpleParser jsonSimpleParser = new JsonSimpleParser();
         BotAuthorization botAuthorization = jsonSimpleParser.parse();
+
         TOKEN = botAuthorization.getToken();
         USERNAME = botAuthorization.getUsername();
     }
@@ -36,6 +39,7 @@ public class UserInteraction extends TelegramLongPollingBot {
             if (!(bot.containsKey(chatId))) {
                 sendMessage("Добро пожаловать! " + Emodji.MEMO, chatId);
                 bot.put(chatId, new Bot(chatId));
+                logger.info("New user " + chatId +" added");
                 sendMessage(Emodji.SMILE, chatId);
                 return;
             }
@@ -45,7 +49,6 @@ public class UserInteraction extends TelegramLongPollingBot {
         } else {
             sendMessage(SystemMessages.ERROR_MESSAGE, chatId);
         }
-        System.out.println(bot.get(chatId).getState().getClass());
     }
 
     @Override
@@ -66,6 +69,7 @@ public class UserInteraction extends TelegramLongPollingBot {
             new UserInteraction().execute(message);
         } catch (TelegramApiException e) {
             e.printStackTrace();
+            logger.error("Unable to send message to user " + chat_id);
         }
     }
 
