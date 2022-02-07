@@ -7,7 +7,7 @@ import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
 import org.telegram.telegrambots.updatesreceivers.DefaultBotSession;
 
 public class Main {
-    private static final Logger logger = Logger.getLogger(Main.class);
+    //private static final Logger logger = Logger.getLogger(Main.class);
 
     public static void main(String[] args) {
         System.out.println("Hello World");
