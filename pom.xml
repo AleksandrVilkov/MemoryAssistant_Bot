@@ -64,11 +64,11 @@
                     <assembleDirectory>target</assembleDirectory>
                     <programs>
                         <program>
-                            <mainClass>bot.Main</mainClass>
+                            <mainClass>Main</mainClass>
                             <name>worker</name>
                         </program>
                         <program>
-                            <mainClass>bot.Main</mainClass>
+                            <mainClass>Main</mainClass>
                         </program>
                     </programs>
                 </configuration>
