@@ -67,9 +67,6 @@
                             <mainClass>Main</mainClass>
                             <name>worker</name>
                         </program>
-                        <program>
-                            <mainClass>Main</mainClass>
-                        </program>
                     </programs>
                 </configuration>
                 <executions>
