@@ -18,3 +18,16 @@
 2022-02-04 14:29:43 INFO  Main:13 - Start my app
 2022-02-04 14:29:43 INFO  Main:16 - Trying to register a bot
 2022-02-04 14:29:44 INFO  Main:19 - Bot successfully created!
+2022-02-04 14:59:47 INFO  Main:13 - Start my app
+2022-02-04 14:59:47 INFO  Main:16 - Trying to register a bot
+2022-02-04 14:59:48 ERROR Main:22 - ERROR! Failed to create bot!
+2022-02-07 08:19:55 INFO  Main:13 - Start my app
+2022-02-07 08:19:55 INFO  Main:16 - Trying to register a bot
+2022-02-07 08:19:56 ERROR Main:22 - ERROR! Failed to create bot!
+2022-02-07 08:20:58 INFO  Main:13 - Start my app
+2022-02-07 08:20:58 INFO  Main:16 - Trying to register a bot
+2022-02-07 08:20:59 INFO  Main:19 - Bot successfully created!
+2022-02-07 08:21:10 INFO  UserInteraction:42 - New user 436641871 added
+2022-02-07 08:22:41 INFO  Main:13 - Start my app
+2022-02-07 08:22:41 INFO  Main:16 - Trying to register a bot
+2022-02-07 08:22:43 INFO  Main:19 - Bot successfully created!
