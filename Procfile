@@ -1,1 +1,1 @@
-web: java -jar MemoryAssistant_Bot-1.0-SNAPSHOT.jar
+worker: sh target/bin/worker
