@@ -7,7 +7,6 @@ package States;
 
 import bot.Bot;
 import bot.UserInteraction;
-import org.apache.commons.logging.Log;
 import org.apache.log4j.Logger;
 
 public class About extends State {
