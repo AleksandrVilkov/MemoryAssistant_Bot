@@ -1,1 +1,1 @@
-web: java $JAVA_OPTS -cp target/classes:target/ dependency/* bot.Main
+web: java -jar MemoryAssistant_Bot-1.0-SNAPSHOT.jar
